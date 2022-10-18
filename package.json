@@ -1,0 +1,17 @@
+{
+	"name": "hw1",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"concurrently": "^7.4.0",
+		"pug-cli": "^1.0.0-alpha6",
+		"sass": "^1.55.0"
+	},
+	"scripts": {
+		"dev:watch:pug": "pug --watch ./src/index.pug --out ./dist/",
+		"dev:watch:sass": " sass --watch ./src/scss/style.scss ./dist/css/style.css",
+		"dev:yarn": "concurrently yarn:dev:watch:*",
+		"dev:npm": "concurrently npm:dev:watch:*"
+	}
+}
