@@ -1,0 +1,53 @@
+include ../Socials.pug
+include ./HeaderButtons.pug
+
+mixin NavLink(text = 'NavLink', href = '#')
+  li.nav__item 
+    a.nav__link.text.weight-700(href=href) #{text}
+
+-
+  var navItems = [
+    {text: 'Каталог товаров', href: '#'},
+    {text: 'Доставка и оплата', href: '#'},
+    {text: 'Цены', href: '#'},
+    {text: 'Контакты', href: '#'},
+  ]
+
+header.header
+  .header__logo 
+    img(src="./assets/images/Logo.png", alt="Логотип нашей компании")
+  .header__inner 
+
+    .header__burger
+      button.burger__button#burgerBtn
+        span.burger__span
+
+      .burger__menu
+        .header__burger
+          button.burger__button#burgerCloseBtn
+            span.burger__span
+        nav.burger__nav 
+          ul.nav__list
+            for item in navItems
+              +NavLink(item.text, item.href)
+
+        .burger__contacts 
+          a.contacts__phone.text(href='tel:+78125092198') +7 (812) #[span.text.weight-bold 509 21 98]
+          
+          +Socials('contacts__socials')
+      
+    nav.header__nav 
+      ul.nav__list
+        for item in navItems
+          +NavLink(item.text, item.href)
+
+    .header__contacts 
+      a.contacts__phone.text(href='tel:+78125092198') +7 (812) #[span.text.weight-bold 509 21 98]
+
+      a.contacts__callme.text.weight-bold(href='#contact') Перезвоните 
+      
+      +Socials('contacts__socials')
+
+
+    .header__buttons
+      +HeaderButtons

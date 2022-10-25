@@ -1,0 +1,59 @@
+include ./Socials.pug
+
+mixin Link(text, href)
+  li.footer__linklist__item
+    a.footer__linklist__item__link(href=href) #{text} 
+
+mixin LinkList(items)
+  ul.column.footer__linklist
+    for item in items
+      +Link(item.text, item.href)
+
+
+.footer 
+  .container 
+    .footer__inner
+
+      .footer__col.column
+        h3.footer__title.text.size-big.weight-700 Каталог
+        .footer__col__inner
+          +LinkList([
+            {text: 'Дымоходы', href: '#'},
+            {text: 'Дымососы', href: '#'},
+            {text: 'Печи для дома', href: '#'},
+            {text: 'Печи для бани', href: '#'},
+          ])
+          +LinkList([
+            {text: 'Камины', href: '#'},
+            {text: 'Силикат кальция', href: '#'},
+            {text: 'Котлы', href: '#'},
+            {text: 'Еще', href: '#'},
+          ])
+
+      .footer__col.column
+        h3.footer__title.text.size-big.weight-700 Информация
+        .footer__col__inner
+          +LinkList([
+            {text: 'Каталог', href: '#'},
+            {text: 'Установка и монтаж', href: '#'},
+            {text: 'Отзывы', href: '#'},
+            {text: 'Ликвидация товара', href: '#'},
+          ])
+          +LinkList([
+            {text: 'Полезное', href: '#'},
+            {text: 'Контакты', href: '#'},
+            {text: 'Оплата и доставка', href: '#'},
+          ])
+
+      .footer__col.footer__info.column
+        h3.footer__title.text.size-big.weight-700 
+          | Время работы
+        .footer__info__item.footer__info--time
+          img.footer__info__item__img(src='./assets/images/clock.svg') 
+          span.footer__info--time__item #[span пт-пн] 9.00 - 20.00 
+          span.footer__info--time__item #[span сб-вс] 10.00 - 18.00
+        .footer__info__item.footer__info--location 
+          img.footer__info__item__img(src='./assets/images/map-marker.svg')
+          | г.Санкт-Петербург ул.Тамбасова д.7
+        
+        +Socials
