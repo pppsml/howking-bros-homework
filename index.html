@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJAX homework</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -17,12 +19,13 @@
             <button type="submit" class="load-button"> Загрузить данные </button>
         </form>
 
+        <button type="button" class="load-button" id="js-load-users">Загрузить mock пользователей</button>
+
         <div class="results-container js-results">
 
         </div>
     </div>
 
 </body>
-<script src="scripts.js"></script>
 
 </html>
