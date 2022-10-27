@@ -13,15 +13,23 @@
 
 <body>
     <div class="page-wrapper">
-        <p>Введите свое имя пользователя на GitHub</p>
+        <p>Задание №1.1 Получение пользователя github</p>
         <form name="get-user-form">
             <input class="input-name" type="text" name="name" placeholder="Введите свое имя GitHub">
             <button type="submit" class="load-button"> Загрузить данные </button>
         </form>
-
+        
+        <p>Задание №1.2 Получение пользователей с помощью axios</p>
         <button type="button" class="load-button" id="js-load-users">Загрузить mock пользователей</button>
+        
+        <p>Задание №2.1 Валидация инпута с помощью try\catch</p>
+        <input id="input-number" class="input-name" type="text" name="number" placeholder="Введите число от 5 до 10">
+        <p class="input__result" id="input-number-result"></p>
 
-        <div class="results-container js-results">
+        <p>Задание №2.2 Переписать лотерею на async\await (смотреть консоль)</p>
+        <button type="button" class="load-button" id="lottery-start">Начать лотерею</button>
+
+        <div class="results-container" id="get-users-results">
 
         </div>
     </div>
