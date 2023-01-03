@@ -99,7 +99,7 @@ const Header: FC<Props> = (props) => {
 				<Container>
 					<div className={classes['header--bottom__inner']}>
 						<Logo />
-						<Navigation>
+						<Navigation className={classes['header--bottom__nav']}>
 							<Navigation.NavItem>
 								<Dropdown
 									className={classes['header--bottom__link']}

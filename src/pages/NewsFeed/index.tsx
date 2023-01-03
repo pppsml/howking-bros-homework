@@ -7,15 +7,12 @@ import {
 	useEffect,
 	useState,
 } from 'react';
-import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
-import Helmet from 'react-helmet';
-
-import { Title, Input, Button, Icon } from '@/components';
+import { Title, Input, Button, SearchIcon } from '@/components';
 import { Container } from '@/templates';
 
 import { useDebounce } from '@/hooks';
-import { News } from '@/store/types';
 
 import classes from './NewsFeed.module.scss';
 import NewsFeedItem from './NewsFeedItem/NewsFeedItem';
@@ -61,7 +58,9 @@ const NewsFeed: FC<Props> = ({}) => {
 
 	return (
 		<div className={classes.newsfeed__wrapper}>
-			<Helmet title="SDAEM.BY - Новости" />
+			<Helmet>
+				<title>SDAEM.BY - Новости</title>
+			</Helmet>
 			<Container>
 				<div className={classes.header}>
 					<Title>Новости</Title>
@@ -73,7 +72,7 @@ const NewsFeed: FC<Props> = ({}) => {
 							onChange={searchChangeHandler}
 						/>
 						<Button className={classes.searchForm__button} type="submit" style="purple-solid">
-							<Icon name="search" />
+							<SearchIcon />
 						</Button>
 					</form>
 				</div>

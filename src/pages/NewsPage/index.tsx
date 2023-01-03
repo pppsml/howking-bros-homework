@@ -8,7 +8,30 @@ import { News } from '@/store/types';
 
 import mockImage from '@/assets/newsMockImage.png';
 import classes from './NewsPage.module.scss';
-import { Title } from '@/components';
+import { Link, Title, VKIcon, FBIcon, ViberIcon, TGIcon, WAPPIcon } from '@/components';
+
+const links = [
+	{
+		href: 'https://vk.com',
+		icon: <VKIcon />,
+	},
+	{
+		href: 'https://facebook.com',
+		icon: <FBIcon />,
+	},
+	{
+		href: 'https://viber.com',
+		icon: <ViberIcon />,
+	},
+	{
+		href: 'https://web.telegram.org',
+		icon: <TGIcon />,
+	},
+	{
+		href: 'https://web.whatsapp.com/',
+		icon: <WAPPIcon />,
+	},
+];
 
 const NewsPage: FC = () => {
 	const { newsId } = useParams();
@@ -42,7 +65,22 @@ const NewsPage: FC = () => {
 					<>
 						<div className={classes.header}>
 							<Title>{news.data.title}</Title>
-							<div>{news.data.publishedAt}</div>
+							<div>
+								<div>{news.data.publishedAt}</div>
+								<ul className={classes['socialLink--list']}>
+									{links.map(({ icon, href }) => (
+										<li key={href}>
+											<Link
+												style="purple-transparent"
+												className={classes['socialLink']}
+												href={`/redirect?=${href}`}
+												target="_blank">
+												{icon}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
 						<div>
 							<img

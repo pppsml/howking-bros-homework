@@ -22,3 +22,20 @@
     height: $size;
   }
 }
+
+
+.socialLink--list {
+	display: flex;
+
+	gap: 20px;
+	list-style: none;
+	.socialLink {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		$size: 35px;
+		width: $size;
+		height: $size;
+	}
+}
