@@ -1,0 +1,39 @@
+.header {
+  z-index: 999;
+  &--top {
+    background-color: #f8f8f8;
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &--bottom {
+    background-color: #fff;
+    color: #1E2123;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__link {
+      color: #1E2123;
+      & > a, & > button > a {
+        padding: 20px 0 ;
+        font-weight: 600;
+      }
+
+      &--icon {
+        color: #FFD54F;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.link--registation {
+  color: #664EF9;
+}

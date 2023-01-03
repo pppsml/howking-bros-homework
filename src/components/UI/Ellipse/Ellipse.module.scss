@@ -1,0 +1,22 @@
+.ellipse {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+
+  &.style {
+    &--gray {
+      color: #8291A3;
+      background: #f8f8f8;
+    }
+
+    &--purple {
+      color: #664EF9;
+      background: #664EF910;
+    }
+
+    &--yellow {}
+
+    &--red {}
+  }
+}

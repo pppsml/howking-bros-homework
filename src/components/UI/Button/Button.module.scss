@@ -1,0 +1,35 @@
+.button {
+  font-size: 14px;
+  color: currentColor;
+  background: transparent;
+
+  cursor: pointer;
+  transition: .4s ease;
+  transition-property: color, background, background-position;
+
+  &--purple-solid {
+    padding: 10px 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #664EF9;
+    border: none;
+    border-radius: 50px;
+    &:hover {
+      background: darken(#664EF9, 5%);
+    }
+  }
+
+  &--purpleGradient {
+    padding: 10px 18px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #9D94FF, #6B50E9);
+    background-size: 140%;
+    background-position: 0;
+    border: none;
+    border-radius: 50px;
+    &:hover {
+      background-position: 100%;
+    }
+  }
+}

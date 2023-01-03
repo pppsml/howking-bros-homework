@@ -1,0 +1,8 @@
+.input {
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  &:focus {
+    outline: 2px solid rgba(102, 78, 249, 0.8);
+  }
+}

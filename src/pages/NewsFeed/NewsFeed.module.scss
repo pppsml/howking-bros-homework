@@ -1,0 +1,59 @@
+.newsfeed__wrapper {
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    $posTop: 35px;
+    top: $posTop;
+    right: -50px;
+
+    width: 850px;
+    height: min(calc(100% - $posTop), 1000px);
+    border-radius: 40px;
+    background: linear-gradient(90deg, #94AFFF 0%, #4E64F9 94.5%);
+    opacity: 0.1;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: {
+      top: 100px;
+      bottom: 50px;
+    };
+  }
+
+  .searchForm {
+    position: relative;
+    width: 50%;
+    $elemsH: 37px;
+    &__input {
+      height: $elemsH;
+      padding: 0 20px;
+      box-shadow: 0px 10px 20px rgba(0, 96, 206, 0.05);
+      font-weight: 500;
+      font-size: 14px;
+      border: 2px solid transparent;
+      &:focus {
+        outline: none;
+        border: 2px solid rgba(102, 78, 249, 0.8);;
+      }
+    }
+    &__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: $elemsH;
+
+    }
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
