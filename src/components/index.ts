@@ -4,6 +4,7 @@ export { default as Footer } from './Footer/Footer'
 // UI
 export { default as Logo } from './UI/Logo/Logo'
 export { default as Ellipse } from './UI/Ellipse/Ellipse'
+export { default as Flex } from './UI/Flex/Flex'
 
 export { default as Date } from './UI/Date/Date'
 export { default as Link } from './UI/Link/Link'

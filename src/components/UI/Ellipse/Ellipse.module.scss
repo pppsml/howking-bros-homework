@@ -13,6 +13,10 @@
     &--purple {
       color: #664EF9;
       background: #664EF910;
+      transition: background .4s ease;
+      &:hover {
+        background: rgba(102, 78, 249, 0.2);
+      }
     }
 
     &--yellow {}

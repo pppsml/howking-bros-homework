@@ -9,18 +9,6 @@
 
   transition: color .4s ease;
 
-  &--purple-transparent {
-    padding: 10px 15px;
-    font-weight: 700;
-    color: #664EF9;
-    background: rgba(102, 78, 249, 0.1);
-    border: none;
-    border-radius: 50px;
-    &:hover {
-      background: rgba(102, 78, 249, 0.2);
-    }
-  }
-
   &--underline {
     padding: 12px 0;
     &::before {

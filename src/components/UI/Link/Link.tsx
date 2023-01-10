@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import classes from './Link.module.scss';
 
 const LinkStyles = {
-	'purple-transparent': classes['link--purple-transparent'],
 	underline: classes['link--underline'],
 };
 type LinkStylesType = typeof LinkStyles;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button, Link, Title } from '@/components';
+import { Button, Date, Ellipse, Link, Title } from '@/components';
 
 import { News } from '@/store/types';
 import classes from './NewsFeedItem.module.scss';
@@ -25,9 +25,11 @@ const NewsFeedItem: FC<Props> = ({ data, id }) => {
 				<p className={classes.newsFeedItem__descr}>{previewDescr}</p>
 				<span className={classes.newsFeedItem__separator} />
 				<div className={classes.newsFeedItem__footer}>
-					<span className={classes.newsFeedItem__footer__publishedAt}>{publishedAt}</span>
-					<Link style="purple-transparent" href={`/news/${id}`}>
-						Читать
+					<Ellipse>
+						<Date timestamp={publishedAt} />
+					</Ellipse>
+					<Link href={`/news/${id}`}>
+						<Ellipse style="purple">Читать</Ellipse>
 					</Link>
 				</div>
 			</div>

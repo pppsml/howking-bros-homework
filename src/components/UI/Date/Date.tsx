@@ -2,9 +2,36 @@ import { FC } from 'react';
 
 import classes from './Date.module.scss';
 
-type Props = {};
+const months = [
+	'января',
+	'февраля',
+	'марта',
+	'апреля',
+	'мая',
+	'июня',
+	'июля',
+	'августа',
+	'сентября',
+	'октября',
+	'ноября',
+	'декабря',
+];
 
-const Date: FC<Props> = ({}) => {
-	return <span></span>;
+type Props = {
+	timestamp: number;
 };
-export default Date;
+
+const DateComponent: FC<Props> = ({ timestamp }) => {
+	const date = new Date(timestamp);
+
+	const day = date.getDate();
+	const month = months[date.getMonth()];
+	const year = date.getFullYear();
+
+	return (
+		<span>
+			{day} {month} {year}
+		</span>
+	);
+};
+export default DateComponent;

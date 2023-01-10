@@ -23,11 +23,18 @@
   }
 }
 
+.header {
+	padding: {
+		top: 60px;
+		bottom: 40px;
+	};
+}
+
+.image {
+	margin-bottom: 40px;
+}
 
 .socialLink--list {
-	display: flex;
-
-	gap: 20px;
 	list-style: none;
 	.socialLink {
 		display: flex;
@@ -37,5 +44,36 @@
 		$size: 35px;
 		width: $size;
 		height: $size;
+		& > svg {
+			$svgSize: 19px;
+			width: $svgSize;
+			height: $svgSize;
+		}
+	}
+}
+
+.readalso__wrapper {
+	position: relative;
+
+	padding: {
+		top: 60px;
+		bottom: 100px;
+	};
+
+	& .readalso__feed {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, #94AFFF 0%, #4E64F9 94.5%);
+		opacity: 0.1;
 	}
 }
