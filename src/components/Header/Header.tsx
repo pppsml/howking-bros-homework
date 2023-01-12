@@ -1,8 +1,9 @@
 import { FC, ReactNode } from 'react';
 
 import { Container } from '@/templates';
-import { Logo, Link, Dropdown, Button, HeartIcon } from '@/components';
-import MapMarkerIcon from '@/components/UI/Icons/MapMarker';
+import { Logo, Link, Dropdown, Button } from '@/components';
+import { HeartIcon } from '@/components/UI/icons';
+import MapMarkerIcon from '@/components/UI/icons/MapMarker';
 import Navigation from './Navigation';
 
 import classes from './Header.module.scss';

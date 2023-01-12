@@ -6,18 +6,9 @@ import { Container } from '@/templates';
 
 import { News } from '@/store/types';
 
-import {
-	Link,
-	Title,
-	VKIcon,
-	FBIcon,
-	ViberIcon,
-	TGIcon,
-	WAPPIcon,
-	Flex,
-	Date,
-	Ellipse,
-} from '@/components';
+import { Link, Title, Flex, Date, Ellipse, BreadCrumbs } from '@/components';
+import { VKIcon, FBIcon, ViberIcon, TGIcon, WAPPIcon } from '@/components/UI/icons';
+
 import NewsFeedItem from '../NewsFeed/NewsFeedItem/NewsFeedItem';
 
 import mockImage from '@/assets/newsMockImage.png';
@@ -46,12 +37,17 @@ const links = [
 	},
 ];
 
-const getRandomNews = () => {
+const getRandomNews = (count: number): Promise<AxiosResponse<News, any>>[] => {
+	const newsIds: number[] = [];
 	const promises: Promise<AxiosResponse<News, any>>[] = [];
 
-	for (let i = 0; i < 3; i++) {
-		promises.push(axios.get<News>(`/api/news/${Math.floor(Math.random() * 50)}`));
+	while (newsIds.length < count) {
+		const number = Math.ceil(Math.random() * 50);
+		if (newsIds.includes(number)) continue;
+		newsIds.push(number);
 	}
+
+	newsIds.forEach((id) => promises.push(axios.get(`/api/news/${id}`)));
 
 	return promises;
 };
@@ -76,7 +72,7 @@ const NewsPage: FC = () => {
 				setNews(null);
 			});
 
-		Promise.all(getRandomNews())
+		Promise.all(getRandomNews(3))
 			.then((data) => {
 				const news = data.map((i) => i.data);
 				setReadalsoNews(news);
@@ -95,7 +91,15 @@ const NewsPage: FC = () => {
 				) : (
 					// если всё ок то вернуть контент
 					<>
-						<div className={classes.header}>
+						<Flex direction="column" items="stretch" gap={27} className={classes.header}>
+							<BreadCrumbs
+								color="purple"
+								items={[
+									<BreadCrumbs.Home />,
+									<BreadCrumbs.Link href="/news">Новости</BreadCrumbs.Link>,
+									<BreadCrumbs.Text>{news.data.title}</BreadCrumbs.Text>,
+								]}
+							/>
 							<Title>{news.data.title}</Title>
 							<Flex items="center" justify="space-between">
 								<Ellipse style="purple">
@@ -116,7 +120,7 @@ const NewsPage: FC = () => {
 									</Flex>
 								</Flex>
 							</Flex>
-						</div>
+						</Flex>
 						<div>
 							<img
 								className={classes.image}
@@ -124,7 +128,7 @@ const NewsPage: FC = () => {
 								alt={news.data.img.alt ?? 'Фотография интерьера квартиры'}
 							/>
 						</div>
-						<div style={{ whiteSpace: 'pre-wrap' }}>{news.data.content}</div>
+						<div className={classes['content']}>{news.data.content}</div>
 					</>
 				)}
 			</Container>

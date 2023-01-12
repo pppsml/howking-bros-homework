@@ -1,0 +1,19 @@
+
+
+.color {
+  &--purple {
+    $color: #4E64F9;
+    color: $color;
+    fill: $color;
+  }
+}
+
+.text {
+  color: #686868;
+}
+
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
